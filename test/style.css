@@ -1,0 +1,358 @@
+:root {
+  --linear-gradient-active: linear-gradient(
+    90deg,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  --red-input-errors: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  --fz-16: 1.6rem;
+  --fz-18: 1.8rem;
+}
+html {
+  --base-font-size: 62.5%;
+
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--base-font-size);
+  font-weight: 500;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: unset;
+  padding: unset;
+}
+
+label,
+button,
+input,
+input::placeholder,
+legend {
+  font-size: var(--fz-16);
+}
+
+input,
+input::placeholder,
+button {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+body {
+  color: var(--very-dark-violet);
+}
+.d--flex {
+  display: flex;
+}
+
+.d--flex-fd-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.container {
+  background: var(--white);
+}
+.card__details__form {
+  width: 90dvw;
+  margin: 0 auto;
+}
+.card__details__form--hidden {
+  display: none;
+}
+.card__details__form label,
+.card__details__form input,
+.card__details__form legend {
+  width: 100%;
+  display: inline-block;
+}
+.card__details__form label,
+.card__details__form legend {
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+.card__details__form input,
+.card__details__form fieldset {
+  margin-bottom: 1em;
+}
+.card__details__form input {
+  color: var(--very-dark-violet);
+  outline: none;
+
+  border: 1.5px solid var(--light-grayish-violet);
+  padding: 0.8em 0.9em;
+  border-radius: 0.6em;
+}
+
+.card__details__form input:invalid {
+  border: 1.5px solid var(--red-input-errors);
+}
+.card__details__form input::placeholder {
+  color: var(--dark-grayish-violet);
+}
+.card__details__form input:focus {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+    var(--linear-gradient-active) border-box;
+
+  border-radius: 0.6em;
+
+  border: 1.5px solid transparent;
+}
+.cardholder__name::placeholder {
+  text-transform: none;
+}
+.cardholder__name {
+  text-transform: capitalize;
+}
+.card__details__form .label--hidden {
+  display: none;
+}
+.card__details__form .details__wrapper {
+  gap: 1.2em;
+}
+.card__details__form fieldset {
+  border: none;
+  gap: 1em;
+}
+.card__details__form fieldset input {
+  text-align: center;
+  margin-right: 1em;
+}
+.card__details__form fieldset input:last-of-type {
+  margin-right: 0;
+}
+
+.cvc__wrapper {
+  flex: 1;
+}
+.error__state {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: var(--red-input-errors);
+  margin-bottom: 2em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  border: none;
+
+  width: 100%;
+
+  padding: 0.8em;
+  border-radius: 0.4em;
+}
+.d--flex-fd-col {
+  flex-direction: column;
+}
+.complete__state::before {
+  content: url(images/icon-complete.svg);
+  display: inline-block;
+  margin-bottom: 3em;
+}
+.complete__state {
+  height: 50dvh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.complete__state--hidden {
+  display: none;
+}
+.complete__state h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.6em;
+}
+.complete__state p {
+  font-size: var(--fz-16);
+  color: var(--dark-grayish-violet);
+  margin-bottom: 2.5em;
+}
+.complete__state .continue {
+  width: 75%;
+}
+
+.img__wrapper {
+  position: relative;
+  margin-bottom: 7em;
+}
+
+.card {
+  position: absolute;
+  width: 275px;
+}
+.card__front {
+  z-index: 2;
+  top: 54%;
+  left: 5%;
+}
+
+.card__details {
+  position: relative;
+  font-size: var(--fz-18);
+  color: var(--white);
+}
+.card__details::before {
+  content: '';
+
+  position: absolute;
+  top: 20px;
+  left: 22px;
+
+  display: inline-block;
+
+  background: var(--white);
+
+  height: 35px;
+  width: 35px;
+
+  border-radius: 50%;
+}
+.card__details .circle,
+.card__details .card__front__number,
+.card__details .card__front__name,
+.card__details .card__front__exp__date {
+  position: absolute;
+}
+.card__details .circle {
+  top: 30px;
+  left: 68px;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+  border: 1.3px solid var(--white);
+}
+.card__details .card__front__number {
+  top: 53%;
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+  letter-spacing: 1.6px;
+}
+
+.card__details .card__front__name,
+.card__details .card__front__exp__date {
+  font-size: 1.1rem;
+  top: 75%;
+}
+
+.card__details .card__front__name {
+  text-transform: uppercase;
+  left: 23px;
+}
+
+.card__details .card__front__exp__date {
+  left: 80%;
+}
+
+.card__back {
+  top: 45px;
+  left: 80px;
+}
+.card__details__back {
+  position: relative;
+}
+
+.card__details__back .card__back__cvc {
+  color: var(--white);
+
+  position: absolute;
+  top: 66px;
+  left: 215px;
+
+  font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  button {
+    cursor: pointer;
+  }
+  .container {
+    height: 100dvh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .d--flex-fd-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .card__details__form {
+    width: 25%;
+  }
+
+  .complete__state {
+    flex: 1;
+  }
+  .complete__state .continue {
+    width: 35%;
+  }
+  .img__wrapper {
+    margin-bottom: 0;
+  }
+  .card {
+    width: 447px;
+  }
+  .card__details {
+    font-size: 2.5rem;
+  }
+  .card__details::before {
+    top: 30px;
+    left: 30px;
+    width: 45px;
+    height: 45px;
+  }
+  .card__details .circle {
+    top: 42px;
+    left: 90px;
+    width: 20px;
+    height: 20px;
+  }
+  .card__details .card__front__number {
+    top: 57%;
+    letter-spacing: 5px;
+  }
+  .card__front {
+    top: 21%;
+    left: 35%;
+  }
+  .card__details .card__front__name,
+  .card__details .card__front__exp__date {
+    font-size: 1.3rem;
+    top: 80%;
+  }
+
+  .card__details .card__front__name {
+    text-transform: uppercase;
+    left: 35px;
+  }
+
+  .card__details .card__front__exp__date {
+    left: 83%;
+  }
+
+  .card__back {
+    top: 52.5%;
+    left: 51%;
+  }
+
+  .card__details__back .card__back__cvc {
+    top: 45%;
+    left: 80%;
+    font-size: 1.5rem;
+  }
+}
